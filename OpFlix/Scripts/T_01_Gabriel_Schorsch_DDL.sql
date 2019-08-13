@@ -16,7 +16,8 @@ CREATE TABLE Usuarios(
 	IdPermissao int foreign key references Permissoes (IdPermissao)
 );
 
-Alter table Usuarios Add Imagem Nvarchar(2083)
+
+Alter table Usuarios Add Imagem Nvarchar(2083) default 'http://cdn.onlinewebfonts.com/svg/img_333639.png'
 
 Create table Tipo(
 	IdTipo int primary key identity,
@@ -37,3 +38,8 @@ Create Table Lancamentos(
 	DataLancamento date not null,
 	TempoDuracao int not null
 );
+
+Create Table Plataformas(
+	IdPlataforma INT PRIMARY KEY IDENTITY,
+	Nome Varchar(255) not null
+)
