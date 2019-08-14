@@ -5,6 +5,7 @@ Insert into Usuarios (Nome,Email,Senha,DataNascimento,IdPermissao) Values ('Gabr
 																		  ('Mariana','mariana.regia@email.com','123123','2003-05-13',2)
 Insert into Categoria Values ('Ação'),('Romance'),('Terror'),('Ficção Científica');
 Insert into Categoria Values ('Animação')
+Insert into Categoria Values ('Drama'), ('Comédia'), ('Documentário')
 
 Insert into Tipo Values ('Filme'),('Série')
 
@@ -35,7 +36,10 @@ Insert into Lancamentos (Titulo,Sinopse,IdTipo,IdCategoria,DataLancamento,TempoD
 ('Toy Story 4', 'A quarta sequência do filme Toy Story',1,5,'2019-06-20',100)
 Insert into Lancamentos (Titulo,Sinopse,IdTipo,IdCategoria,DataLancamento,TempoDuracao) Values 
 ('Rei Leão - 2019', 'A adaptação',1,6,'2019-07-18',118)
-Insert into Categoria Values ('Drama'), ('Comédia'), ('Documentário')
+Insert into Lancamentos (Titulo,Sinopse,IdTipo,IdCategoria,DataLancamento,TempoDuracao, Plataforma) Values 
+('Guardiões da Galáxia','Mais um filme da Marvel no espaço (._.)',1, 6,'2014-07-31','125',2)
+Insert into Lancamentos (Titulo,Sinopse,IdTipo,IdCategoria,DataLancamento,TempoDuracao, Plataforma) Values 
+('Guardiões da Galáxia','Mais um filme da Marvel no espaço (._.)',1, 6,'2014-07-31','125',1)
 
 Insert into Plataformas Values ('Netflix'),('Cinema'),('Amazon Prime'), ('VHS')
 
@@ -47,8 +51,7 @@ Delete from Lancamentos Where Titulo = 'Deuses Americanos'
 
 Update Lancamentos SET Titulo = 'La Casa De Papel - 3º Temporada' WHERE Titulo = 'La Casa de Papel 3 temp'
 Update Lancamentos SET DataLancamento = '1994-07-08' WHERE Titulo = 'Rei Leão'
-Update Lancamentos SET Plataforma = 4 Where 
-Update Usuarios SET IdPermissao = 2 Where IdUsuario = 5
+Update Usuarios SET IdPermissao = 1 Where IdUsuario = 5
 Update Usuarios SET Imagem
 = 'https://scontent-lht6-1.cdninstagram.com/vp/4e9bc2de56050b8f2aa421337a73395a/5D9B01DD/t51.2885-19/s150x150/52730233_551230265283567_3460431815829880832_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com' 
 WHERE IdUsuario = 1;

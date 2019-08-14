@@ -5,15 +5,19 @@ Select * from Permissoes
 Select * from Tipo
 Select * from Categoria
 Select * from Lancamentos
+Select * from Plataformas
+Select DISTINCT Lancamentos.Titulo, Lancamentos.DataLancamento, Categoria.Nome As Categoria , Tipo.Nome As Tipo From Lancamentos 
+join Categoria on Lancamentos.IdCategoria = Categoria.IdCategoria join Tipo on Lancamentos.IdTipo = Tipo.IdTipo;
 
-Exec ListarFilmesPorCategoria 1
-Exec ContarFilmesPorCategoria 5
+Exec ListarFilmesPorCategoria 5
+Exec ContarFilmesPorCategoria 6
 
 Select * from vwGenerosPlataformas
 
+Select COUNT(*) AS QntdUsuarios from Usuarios
 
 CREATE PROCEDURE ListarFilmesPorCategoria @IdCategoria Int
-AS Select * from Lancamentos Where IdCategoria = @IdCategoria
+AS Select * from Lancamentos Where IdCategoria = @IdCategoria;
 
 
 CREATE PROCEDURE ContarFilmesPorCategoria @IdCategoria Int

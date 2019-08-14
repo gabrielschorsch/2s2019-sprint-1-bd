@@ -31,13 +31,15 @@ Create Table Categoria(
 
 Create Table Lancamentos(
 	IdLancamento int primary key identity,
-	Titulo varchar(255) not null unique,
+	Titulo varchar(255) not null,
 	Sinopse text not null,
 	IdTipo int foreign key references Tipo (IdTipo),
 	IdCategoria int foreign key references Categoria (IdCategoria),
 	DataLancamento date not null,
 	TempoDuracao int not null
 );
+
+
 
 Create Table Plataformas(
 	IdPlataforma INT PRIMARY KEY IDENTITY,
