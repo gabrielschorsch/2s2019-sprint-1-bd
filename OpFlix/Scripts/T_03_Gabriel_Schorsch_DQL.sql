@@ -13,6 +13,7 @@ Exec ListarFilmesPorCategoriaId 5
 Exec ListarFilmesPorCategoriaNome 'Ação'
 Exec ContarFilmesPorCategoriaId 6
 Exec ContarFilmesPorCategoriaNome 'Ação'
+Select * from v_LancamentosProximos(3)
 
 Select * from vwGenerosPlataformas
 
@@ -33,3 +34,13 @@ AS Select COUNT(*) from Lancamentos join Categoria on Lancamentos.IdCategoria = 
 
 CREATE VIEW vwGenerosPlataformas
 AS Select P.Nome AS Plataforma, C.Nome As Genero from Lancamentos L join Categoria C on L.IdCategoria = C.IdCategoria join Plataformas P on P.IdPlataforma = L.Plataforma
+
+Create Function v_LancamentosProximos (@Qntd INT)
+Returns Table 
+AS Return (
+	Select TOP (@Qntd) Titulo,Categoria.Nome as Categoria,Plataformas.Nome as Plataforma FROM Lancamentos join Categoria on Categoria.IdCategoria = Lancamentos.IdCategoria
+	join Plataformas on Plataformas.IdPlataforma = Lancamentos.Plataforma
+	Order by DataLancamento desc
+);
+
+Drop Function v_LancamentosProximos
