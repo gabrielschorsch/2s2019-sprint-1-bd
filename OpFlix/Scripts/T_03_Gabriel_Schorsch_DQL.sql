@@ -44,3 +44,5 @@ AS Return (
 );
 
 Drop Function v_LancamentosProximos
+
+Select Usuarios.Nome as Usuario, Lancamentos.Titulo as Lançamento from LancamentosFavoritos join Usuarios on Usuarios.IdUsuario = LancamentosFavoritos.IdUsuario join Lancamentos on Lancamentos.IdLancamento = LancamentosFavoritos.IdLancamento
