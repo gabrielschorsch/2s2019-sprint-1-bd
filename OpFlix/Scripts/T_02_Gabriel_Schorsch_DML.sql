@@ -41,6 +41,8 @@ Insert into Lancamentos (Titulo,Sinopse,IdTipo,IdCategoria,DataLancamento,TempoD
 Insert into Lancamentos (Titulo,Sinopse,IdTipo,IdCategoria,DataLancamento,TempoDuracao, Plataforma) Values 
 ('Guardiões da Galáxia','Mais um filme da Marvel no espaço (._.)',1, 6,'2014-07-31','125',1)
 
+Insert into LancamentosFavoritos Values (1,1), (2,1), (1,2)
+
 Insert into Plataformas Values ('Netflix'),('Cinema'),('Amazon Prime'), ('VHS')
 
 

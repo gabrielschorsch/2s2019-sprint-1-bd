@@ -45,3 +45,9 @@ Create Table Plataformas(
 	IdPlataforma INT PRIMARY KEY IDENTITY,
 	Nome Varchar(255) not null
 )
+
+Create Table LancamentosFavoritos(
+	IdUsuario INT Foreign Key References Usuarios (IdUsuario),
+	IdLancamento Int Foreign Key References Lancamentos (IdLancamento)
+);
+
